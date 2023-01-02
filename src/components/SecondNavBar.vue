@@ -3,7 +3,10 @@
         <v-app-bar color="white accent-4" dense white>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968528.png" style="height: 25px;" />
-            <v-toolbar-title>Page title</v-toolbar-title>
+            <router-link to="/">
+
+                <v-toolbar-title>Google Form Clone</v-toolbar-title>
+            </router-link>
 
             <v-spacer></v-spacer>
 
@@ -66,12 +69,14 @@
 
         }),
         methods: {
-            changeDialog(){
-                this.dialog = false 
-                window.location.reload()
-            },  
+            changeDialog() {
+                this.dialog = false
+            },
             setColor() {
-                localStorage.setItem('color' ,this.picker.hex)
+                console.log(this.picker.hex)
+                // localStorage.setItem('color' ,this.picker.hex)
+                this.$emit('my-message', this.picker.hex)
+
             }
         }
     }

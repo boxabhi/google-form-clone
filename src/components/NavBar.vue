@@ -3,7 +3,11 @@
         <v-app-bar color="white accent-4" dense white>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968528.png" style="height: 25px;" />
-            <v-toolbar-title>Page title</v-toolbar-title>
+            
+            <router-link to="/">
+
+                <v-toolbar-title>Google Form Clone</v-toolbar-title>
+            </router-link>
 
             <v-spacer></v-spacer>
 
@@ -13,6 +17,9 @@
 
             <v-btn icon>
                 <v-icon>mdi-magnify</v-icon>
+            </v-btn>
+            <v-btn color="primary" v-on:click="logout()" >
+                Logout
             </v-btn>
 
             <v-menu left bottom>
@@ -42,5 +49,11 @@
       
   
     }),
+    methods : {
+        logout(){
+            localStorage.removeItem('auth_token')
+            window.location.href="/login"
+        }
+    }
   }
 </script>

@@ -1,0 +1,62 @@
+<template>
+    <div :style="{background: background_color}">
+     
+        <v-form ref="entryForm" @submit.prevent="submitHandler">
+            <v-container>
+                <v-card elevation="1" style="padding:30px;margin-top: 20px;">
+                    <v-card-title>This is a Form Name</v-card-title>
+                </v-card>
+
+
+             <v-card elevation="1" style="padding:30px;margin-top: 20px;">
+                <p>What is Your age?</p>
+                <div>
+                    <v-checkbox  label="John" value="John"></v-checkbox>
+                    <v-checkbox  label="Jacob" value="Jacob"></v-checkbox>
+                </div>
+            </v-card>
+
+            <v-card elevation="1" style="padding:30px;margin-top: 20px;">
+                <p>What is Your age?</p>
+            <div >
+                <v-radio-group >
+                            <v-radio v-for="i in 4" :id="`radio_${i}`" :key="i"
+                                :label="`${i}`" :value="i"></v-radio>
+                        </v-radio-group>
+                    </div>
+
+                </v-card>
+            <v-card elevation="1" style="padding:30px;margin-top: 20px;">
+                <p>What is Your age?</p>
+                <div>
+                    <v-text-field  counter="25" hint="This field uses counter prop" label="Regular">
+                    </v-text-field>
+                </div>
+            </v-card> 
+                <v-btn type="submit"     depressed dark color="deep-purple" style="margin-top: 20px;" elevation="2">Send</v-btn>
+            </v-container>
+        </v-form>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'SubmitForm',
+        props: ['form'],
+        data() {
+            return {
+                tab: null,
+                items: ['Paragraph', 'Short Answer', 'Multiple Choice'],
+                questions: {},
+                formData: {},
+                submitForm: [],
+                background_color : 'aqua'
+            }
+        },
+        methods: {
+          
+               
+        },
+       
+    }
+</script>
